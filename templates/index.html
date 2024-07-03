@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Consulta de EMT Madrid</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+        }
+        h1 {
+            text-align: center;
+            color: #0072ce;
+        }
+        form {
+            max-width: 400px;
+            margin: 0 auto;
+            padding: 20px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            background-color: #f9f9f9;
+        }
+        label {
+            display: block;
+            margin-bottom: 10px;
+        }
+        input[type=text] {
+            width: calc(100% - 20px);
+            padding: 10px;
+            margin-bottom: 10px;
+            border: 1px solid #ccc;
+            border-radius: 3px;
+        }
+        button {
+            background-color: #0072ce;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 3px;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #005aa7;
+        }
+        .result {
+            margin-top: 20px;
+            padding: 20px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            background-color: #f9f9f9;
+        }
+        .error {
+            color: red;
+            font-weight: bold;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <h1>Consulta de Estimación de Llegada de Autobús</h1>
+    <form action="/" method="post">
+        <label for="stop_id">ID de Parada:</label>
+        <input type="text" id="stop_id" name="stop_id" required value="{{ stop_id if stop_id }}" placeholder="Ej. 4850"><br>
+        <label for="line_arrive">Línea de Autobús:</label>
+        <input type="text" id="line_arrive" name="line_arrive" required value="{{ line_arrive if line_arrive }}" placeholder="Ej. 7"><br>
+        <button type="submit">Consultar</button>
+    </form>
+    {% if estimate_arrive is not none %}
+        <div class="result">
+            <h2>Estimación de Llegada:</h2>
+            <p>{{ estimate_arrive }} minutos</p>
+        </div>
+    {% endif %}
+    {% if error %}
+        <p class="error">{{ error }}</p>
+    {% endif %}
+</body>
+</html>
