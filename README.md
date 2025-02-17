@@ -16,7 +16,7 @@ A **Flask** web application that interacts with the **EMT Madrid API** to provid
 
 ## 📖 Introduction
 
-**Buses 2.0** is a web application that allows users to check **bus arrival times** at specific stops in **Madrid**. The app communicates with the **EMT Madrid Open API** to fetch real-time estimations and displays them on a simple web interface.
+**API EMT Madrid** is a web application that allows users to check **bus arrival times** at specific stops in **Madrid**. The app communicates with the **EMT Madrid Open API** to fetch real-time estimations and displays them on a simple web interface.
 
 ## ✨ Features
 
