@@ -1,4 +1,4 @@
-# 🚍 Buses 2.0
+# 🚍 API EMT Madrid
 
 A **Flask** web application that interacts with the **EMT Madrid API** to provide real-time bus arrival estimations.
 
