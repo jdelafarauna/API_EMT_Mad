@@ -1,105 +1,66 @@
-# 🚍 API EMT Madrid
+# Consulta de Tiempos de Llegada Autobuses EMT Madrid
 
-A **Flask** web application that interacts with the **EMT Madrid API** to provide real-time bus arrival estimations.
+![Language](https://img.shields.io/badge/language-Python-blue)  
+![Status](https://img.shields.io/badge/status-inprogress-green)  
 
-## 📑 Table of Contents
+Este es un proyecto en **Flask** que permite consultar los tiempos estimados de llegada de los autobuses de la **EMT Madrid** en una parada específica y para una línea determinada.
 
-- [Introduction](#introduction)
-- [Features](#features)
-- [Installation](#installation)
-- [Usage](#usage)
-- [Configuration](#configuration)
-- [Dependencies](#dependencies)
-- [Troubleshooting](#troubleshooting)
-- [Contributors](#contributors)
-- [License](#license)
+## 📌 Características
+- Consulta en tiempo real de tiempos de llegada de autobuses.
+- Integración con la API pública de **EMT Madrid**.
+- Interfaz simple basada en **HTML y Flask**.
 
-## 📖 Introduction
-
-**API EMT Madrid** is a web application that allows users to check **bus arrival times** at specific stops in **Madrid**. The app communicates with the **EMT Madrid Open API** to fetch real-time estimations and displays them on a simple web interface.
-
-## ✨ Features
-
-- 🚏 **Check real-time bus arrival times** at any EMT Madrid bus stop.
-- 🔗 **Integration with the EMT Madrid API** for accurate data.
-- 🖥️ **Web-based interface** using Flask and Jinja templates.
-- 📝 **Easy to deploy and configure**.
-
-## ⚙️ Installation
-
-### 1️⃣ Clone this repository
-
-```sh
-git clone https://github.com/jdelafarauna/API_EMT_Mad.git
-cd API_EMT_Mad
+## 🛠️ Instalación
+### 1️⃣ Clonar el repositorio
+```bash
+  git clone https://github.com/tuusuario/API_EMT_Mad.git
+  cd API_EMT_Mad
+```
+### 2️⃣ Crear y activar un entorno virtual (opcional pero recomendado)
+```bash
+  python -m venv venv
+  source venv/bin/activate  # En macOS y Linux
+  venv\Scripts\activate     # En Windows
+```
+### 3️⃣ Instalar dependencias
+```bash
+  pip install -r requirements.txt
+```
+### 4️⃣ Configurar variables de entorno
+Crear un archivo `.env` en la raíz del proyecto y agregar la clave de acceso a la API de EMT Madrid:
+```
+ACCESS_TOKEN=TU_CLAVE_DE_EMT
 ```
 
-### 2️⃣ Create a virtual environment (Recommended)
+## 🚀 Uso
+1️⃣ Ejecutar la aplicación:
+```bash
+  python app.py
+```
+2️⃣ Acceder a la interfaz web en el navegador:
+```
+  http://127.0.0.1:5000/
+```
+3️⃣ Ingresar el número de parada y la línea de autobús para consultar los tiempos de llegada.
 
-```sh
-python -m venv venv
-source venv/bin/activate  # On macOS/Linux
-venv\Scripts\activate     # On Windows
+## 🏗️ Estructura del Proyecto
+```
+/
+├── templates/
+│   ├── index.html
+├── .env
+├── app.py
+├── requirements.txt
+└── README.md
 ```
 
-### 3️⃣ Install dependencies
+## 🤝 Contribución
+¡Las contribuciones son bienvenidas! Para contribuir, sigue estos pasos:
+1. Haz un **fork** del proyecto.
+2. Crea una nueva **rama** (`feature-nueva-funcionalidad`).
+3. Realiza tus cambios y haz un **commit** (`git commit -m "Añadida nueva funcionalidad"`).
+4. Haz un **push** a tu rama (`git push origin feature-nueva-funcionalidad`).
+5. Abre un **Pull Request**.
 
-```sh
-pip install -r requirements.txt
-```
-
-### 4️⃣ Run the application
-
-```sh
-python app.py
-```
-
-The application will be available at **http://127.0.0.1:5000/**.
-
-## 🚀 Usage
-
-1. Open your browser and go to **http://127.0.0.1:5000/**.
-2. Enter a **bus stop ID** and a **bus line number**.
-3. Click **Submit** to get the estimated arrival time.
-
-## ⚙️ Configuration
-
-- The API requires an **Access Token** from EMT Madrid.
-- Replace the `accessToken` inside the `consultar_emt` function with your actual **EMT API Key**:
-
-  ```python
-  headers = {
-      'Accept': 'application/json',
-      'accessToken': 'your-api-key-here'
-  }
-  ```
-
-- If you don't have an API Key, register at the [EMT Madrid Developer Portal](https://opendata.emtmadrid.es/).
-
-## 📦 Dependencies
-
-- [Flask](https://flask.palletsprojects.com/)
-- [Requests](https://docs.python-requests.org/)
-
-To install dependencies manually:
-
-```sh
-pip install flask requests
-```
-
-## 🛠 Troubleshooting
-
-- If you get a **403 Forbidden** error, check if your **API Key** is valid.
-- Ensure that the **bus stop ID** and **bus line number** are correct.
-- If running in a virtual environment, make sure it's activated before running the app.
-- Check the EMT Madrid API status on their [official website](https://opendata.emtmadrid.es/).
-
-## 👨‍💻 Contributors
-
-- **[@jdelafarauna](https://github.com/jdelafarauna)** - Original Creator
-
-Want to contribute? Feel free to open an **issue** or submit a **pull request**!
-
-## 📜 License
-
-This project is licensed under the **MIT License**.
+## 📄 Licencia
+Este proyecto está bajo la licencia **MIT**.
