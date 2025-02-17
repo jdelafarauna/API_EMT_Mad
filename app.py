@@ -1,5 +1,10 @@
 from flask import Flask, render_template, request
 import requests
+import os
+from dotenv import load_dotenv
+
+# Cargar las variables del archivo .env
+load_dotenv()
 
 def crear_app():
     app = Flask(__name__)
@@ -7,12 +12,15 @@ def crear_app():
     # Endpoint base de la API de EMT Madrid
     BASE_URL = "https://openapi.emtmadrid.es/v2/transport/busemtmad/stops/"
 
+    # Obtener la API Key desde las variables de entorno
+    ACCESS_TOKEN = os.getenv("ACCESS_TOKEN")
+
     # Función para hacer la consulta a la API
     def consultar_emt(stop_id, line_arrive):
         url = f"{BASE_URL}{stop_id}/arrives/{line_arrive}/"
         headers = {
             'Accept': 'application/json',
-            'accessToken': 'cd449b3a-3957-11ef-b838-523c69ce06f6'  # Reemplazar con tu API Key de EMT Madrid
+            'accessToken': ACCESS_TOKEN  # Usar la API Key desde el .env
         }
         # Cuerpo de la solicitud
         body = {
@@ -47,7 +55,9 @@ def crear_app():
             else:
                 return render_template('index.html', error="Error al obtener los datos de la EMT")
         return render_template('index.html', estimate_arrive=None)
+
     return app
+
 if __name__ == '__main__':
     app = crear_app()
-    app.run()
+    app.run(debug=True)
