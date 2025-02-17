@@ -30,8 +30,8 @@ A **Flask** web application that interacts with the **EMT Madrid API** to provid
 ### 1️⃣ Clone this repository
 
 ```sh
-git clone https://github.com/jdelafarauna/buses2.0.git
-cd buses2.0
+git clone https://github.com/jdelafarauna/API_EMT_Mad.git
+cd API_EMT_Mad
 ```
 
 ### 2️⃣ Create a virtual environment (Recommended)
