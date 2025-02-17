@@ -1,7 +1,7 @@
 # Consulta de Tiempos de Llegada Autobuses EMT Madrid
 
 ![Language](https://img.shields.io/badge/language-Python-blue)  
-![Status](https://img.shields.io/badge/status-inprogress-green)  
+![Status](https://img.shields.io/badge/status-in%20progress-green)  
 
 Este es un proyecto en **Flask** que permite consultar los tiempos estimados de llegada de los autobuses de la **EMT Madrid** en una parada específica y para una línea determinada.
 
